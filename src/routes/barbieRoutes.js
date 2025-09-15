@@ -9,7 +9,7 @@ import {
 
 const router = express.Router();
 
-// Rotas para bruxos
+// Rotas para barbies
 router.get("/", getAllBarbies);
 router.get("/:id", getBarbieById);
 router.post("/", createBarbie);

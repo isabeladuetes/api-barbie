@@ -9,7 +9,7 @@ const getAllBarbies = (req, res) => {
   });
 };
 
-//Criar a rota do GetById
+// Criar a rota do GetById
 const getBarbieById = (req, res) => {
   let id = parseInt(req.params.id);
 
@@ -21,7 +21,7 @@ const getBarbieById = (req, res) => {
   });
 };
 
-//Create Barbie
+// Create Barbie
 const createBarbie = (req, res) => {
   const { nome, profissao, anoLancamento } = req.body;
 
@@ -49,7 +49,7 @@ const createBarbie = (req, res) => {
   });
 };
 
-//Deletando Barbie
+// Deletando Barbie
 const deleteBarbie = (req, res) => {
     const { id } = req.params;
 
@@ -68,7 +68,7 @@ const deleteBarbie = (req, res) => {
     if (!barbieParaRemover) {
         return res.status(404).json({
             success: false,
-            message: `Barbie com ID ${id} não encontrado para remoção!`
+            message: `Barbie com ID ${id} não encontrada para remoção!`
         });
     }
 
@@ -80,7 +80,7 @@ const deleteBarbie = (req, res) => {
 
     res.status(200).json({
         success: true,
-        message: `Barbie ${barbieParaRemover.nome} (ID: ${id}) foi removido dos registros.`,
+        message: `Barbie ${barbieParaRemover.nome} (ID: ${id}) foi removida dos registros.`,
         barbieRemovido: barbieParaRemover
     });
 };
