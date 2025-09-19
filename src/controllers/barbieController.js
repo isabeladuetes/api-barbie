@@ -5,7 +5,7 @@ const { barbies } = dados;
 const getAllBarbies = (req, res) => {
   res.status(200).json({
     total: barbies.length,
-    barbies: barbies,
+    barbies: barbies
   });
 };
 
@@ -17,7 +17,7 @@ const getBarbieById = (req, res) => {
 
   res.status(200).json({
     success: true,
-    barbie: barbie,
+    barbie: barbie
   });
 };
 
@@ -28,7 +28,7 @@ const createBarbie = (req, res) => {
   if (!nome || !profissao || !anoLancamento) {
     return res.status(400).json({
       success: false,
-      message: "Nome, professão e ano de Lançamento são obrigatórios!",
+      message: "Nome, professão e ano de Lançamento são obrigatórios!"
     });
   }
 
@@ -36,7 +36,7 @@ const createBarbie = (req, res) => {
     id: barbies.length + 1,
     nome: nome,
     profissao: profissao,
-    anoLancamento: anoLancamento,
+    anoLancamento: anoLancamento
   };
 
   //Push no array
@@ -45,7 +45,7 @@ const createBarbie = (req, res) => {
   res.status(201).json({
     success: true,
     message: "Barbie cadastrada com sucesso!",
-    barbie: novaBarbie,
+    barbie: novaBarbie
   });
 };
 
@@ -94,7 +94,7 @@ const updateBarbie = (req, res) => {
   if (isNaN(id)) {
     return res.status(400).json({
       success: false,
-      message: "ID deve ser um número válido!",
+      message: "ID deve ser um número válido!"
     });
   }
 
@@ -105,7 +105,7 @@ const updateBarbie = (req, res) => {
   if (!barbieExiste) {
     return res.status(404).json({
       success: false,
-      message: `Barbie com ID ${id} não encontrada para atualização!`,
+      message: `Barbie com ID ${id} não encontrada para atualização!`
     });
   }
 
